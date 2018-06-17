@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+</html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+    <title>ToDoList</title>
+</head>
+
+<body>
+    <div class="header">
+        <div class="container">
+            <h1>待辦事項</h1>
+
+            <div class="todaydate">
+                <div class="day">20</div>
+                <div class="mon">2018/06</div>
+                <div class="ch-date">初七</div>
+                <div class="week">WED</div>
+
+
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div id="app">
+            <div class="nav">
+                <ul>
+                    <li class="btn btn-menu menu-active">
+                        <a href="#" @click.prevent="allTodo()">全部顯示</a>
+                    </li>
+                    <li class="btn btn-menu">
+                        <a href="#" @click.prevent="allfalseTodo()">未完成</a>
+                    </li>
+                    <li class="btn btn-menu">
+                        <a href="#" @click="alltrueTodo()">已完成</a>
+                    </li>
+                </ul>
+            </div>
+
+
+            <form class="form">
+                <div class="text-border">
+
+                    <input type="text" placeholder="請輸入待辦事項..." @keyup.enter="addTodo(newTodo)" v-model="newTodo" class="inputtext  inputbox" />
+                    <button class="fas fa-star fasstar"></button>
+                    <button class="far fa-star farstar"></button>
+                </div>
+                <div class="form-card card">
+                    <p><i class="far fa-calendar-alt"></i>日期
+                        <input type="date" placeholder="yy/mm/dd" v-model="newTodo" class="inputbox dateinput" />
+                        <input type="time" placeholder="hh:mm" v-model="newTodo" class="inputbox dateinput" /></p>
+                    <p class="filelist">
+                        <i class="far fa-file"></i>檔案上傳
+                        <label class="file-border">
+                            <input type="file" value=""  v-model="newTodo" class="file btn" /><i class="fas fa-plus-circle"></i>
+                        
+                        </label>
+                    </p>
+
+
+                    <p><i class="far fa-comment-dots"></i>附註筆記</p>
+                    <textarea type="text" placeholder="" v-model="newTodo" class="inputbox box"> </textarea>
+                </div>
+                <button type="reset" class="btn form-btn times"><i class="fas fa-times"></i>取消</button>
+                <button type="submit" @onclick="addTodo(newTodo)" class="btn form-btn plus"><i class="fas fa-plus"></i>新增</button>
+
+            </form>
+            <div class="list-card">
+                <ul>
+                    <li v-for="todo in todos" v-show="todo.target == true" v-bind:class="{ active: todo.completed }" class="box bcard">
+                        <input type="checkbox" v-model="todo.completed" />{{todo.content}}
+                        <button class="btn reset fr">
+                                <a href="#" @click.prevent="removeTodo(todo)">刪除 </a>
+                            </button>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="list-card">
+                <ul>
+                    <li v-for="todo in todos" v-show="todo.target == true" v-bind:class="{ active: todo.completed }" class="card bcard">
+                        <div class="textlist"><input type="checkbox" id="checkbox" v-model="todo.completed" />
+                            <label for="checkbox"><span></span><b>{{todo.content}}</b></label>
+
+                        </div>
+                        <button class="icon-btn ">
+                                <a href="#" @click.prevent="removeTodo(todo)"><i class="fas fa-trash-alt"></i></a>
+                        </button>
+                        <button class="icon-btn ">
+                                <a href="#"><i class="fas fa-pencil-alt"></i></a>
+                        </button>
+                        <div class="icon-btn">
+                            <button class="fas fa-star fasstar fasstar2"></button>
+                            <button class="far fa-star farstar farstar2"></button>
+                        </div>
+                        <div class="icon">
+                            <i class="far fa-calendar-alt"></i><span>5/14</span>
+                            <i class="far fa-file"></i>
+                            <i class="far fa-comment-dots"></i>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="list-card">
+                <ul>
+                    <li class="card bcard">
+                        <div class="textlist">
+                            <input type="checkbox" id="checkbox1" />
+                            <label for="checkbox1"><span></span><b>待辦事項內容</b></label>
+                        </div>
+                        <button class="icon-btn ">
+                                <a href="#" @click.prevent="removeTodo(todo)"><i class="fas fa-trash-alt"></i></a>
+                        </button>
+                        <button class="icon-btn ">
+                                <i class="fas fa-pencil-alt"></i><a href="#"></a>
+                        </button>
+                        <div class="icon-btn">
+                            <button class="fas fa-star fasstar fasstar2"></button>
+
+                        </div>
+                        <div class="icon">
+                            <i class="far fa-calendar-alt"></i><span>5/14</span>
+                            <i class="far fa-file"></i>
+                            <i class="far fa-comment-dots"></i>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="list-card">
+                <ul>
+                    <li class="card bcard">
+                        <div class="textlist">
+                            <input type="checkbox" id="checkbox2" />
+                            <label for="checkbox2"><span></span><b>待辦事項內容</b></label>
+                        </div>
+                        <button class="icon-btn ">
+                                <a href="#" @click.prevent="removeTodo(todo)"><i class="fas fa-trash-alt"></i></a>
+                        </button>
+                        <button class="icon-btn ">
+                                <i class="fas fa-pencil-alt"></i><a href="#"></a>
+                        </button>
+                        <div class="icon-btn">
+                            <button class="fas fa-star fasstar fasstar2"></button>
+                            <button class="far fa-star farstar farstar2"></button>
+                        </div>
+                        <div class="icon">
+                            <i class="far fa-calendar-alt"></i><span>5/14</span>
+                            <i class="far fa-file"></i>
+                            <i class="far fa-comment-dots"></i>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.3/vue.js"></script>
+            <script src="js/all.js"></script>
+
+
+</body>

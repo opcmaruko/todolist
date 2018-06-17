@@ -1,0 +1,360 @@
+html,
+body,
+div,
+span,
+h1,
+h2,
+p,
+a,
+{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    font-family: NotoSansTC-Light;
+}
+
+ol,
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #4A4A4A;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 15px;
+    clear: both;
+}
+
+h1 {
+    font-family: NotoSansTC-Medium;
+    font-size: 36px;
+    color: #FF5656;
+    float: left;
+}
+
+.todaydate {
+    float: right;
+    color: #9B9B9B;
+    margin-top: 25px;
+}
+
+.mon {
+    font-size: 20px;
+    color: #9B9B9B;
+    float: right;
+    padding: 10px 0 0 0;
+}
+
+.week,
+.ch-date {
+    font-size: 16px;
+    float: right;
+}
+
+.ch-date {
+    clear: both;
+    padding: 0 5px;
+}
+
+.day {
+    float: right;
+    font-size: 36px;
+    line-height: 36px;
+    color: #FF5656;
+}
+
+ul {
+    margin: 5px 0;
+}
+
+.btn {
+    text-align: center;
+}
+
+.btn-menu a {
+    width: 100%;
+    font-family: NotoSansTC-Medium;
+    font-size: 20px;
+    padding: 8px 0;
+}
+
+.btn-menu {
+    width: 32.666%;
+}
+
+.btn-menu,
+.btn-menu a {
+    display: inline-block;
+    border-bottom: 3px solid #FFf;
+}
+
+.btn-menu:hover,
+.menu-active {
+    border-bottom: 3px solid #FF5656;
+}
+
+.btn-menu a:hover,
+.btn-menu a:active,
+.btn-menu:hover,
+.menu-active a {
+    color: #FF5656;
+}
+
+.form {
+    clear: both;
+    margin-top: 0;
+}
+
+.inputbox,
+.text-border {
+    height: 36px;
+    border: 0px;
+}
+
+.inputtext {
+    width: 100%;
+    padding: 0 8px;
+    box-sizing: border-box;
+}
+
+.fa-star {
+    float: right;
+    position: relative;
+    top: -70%;
+    padding: 0 8px;
+    border: 0px;
+    color: #FF5656;
+    cursor: pointer;
+}
+
+.farstar {
+    right: -30px;
+    top: -70%;
+}
+
+.farstar:focus,
+.farstar:active {
+    display: none;
+}
+
+::placeholder {
+    font-size: 20px;
+    color: #FF5656;
+    padding: 0 8px;
+    position: relative;
+    top: 10%;
+}
+
+textarea:focus,
+button:focus,
+.inputtext:focus,
+.dateinput:focus {
+    outline: none;
+}
+
+textarea:focus,
+.dateinput:focus {
+    background: rgba(255, 86, 86, 0.075);
+}
+
+.inputtext:focus {
+    outline: #ccc auto 1px;
+    background: fff;
+}
+
+.text-border {
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.15);
+    color: #FF5656;
+    width: 100%;
+}
+
+.text-border:focus {
+    background: #FF5656;
+}
+
+.card {
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.15);
+    padding: 10px 8px;
+}
+
+i {
+    padding: 0 8px;
+}
+
+P {
+    font-size: 20px;
+    color: #4A4A4A;
+}
+
+.dateinput {
+    box-shadow: 0 2px 0 0 #FF5656;
+    color: #FF5656;
+    width: 30%;
+    margin-left: 50px;
+}
+
+.file {
+    display: none;
+}
+
+.fa-plus-circle {
+    position: relative;
+    padding: 0 8px;
+    color: #FF5656;
+    cursor: pointer;
+}
+
+.fa-plus-circle:hover {
+    position: relative;
+    padding: 0 8px;
+    color: rgba(255, 86, 86, 0.5);
+    cursor: pointer;
+}
+
+textarea {
+    width: 80%;
+    box-shadow: 0 2px 0 0 #FF5656;
+    color: #FF5656;
+    margin: 0 10%;
+}
+
+.form-btn {
+    font-size: 20px;
+    width: 49.54%;
+    padding: 10px 0;
+    margin-top: 2px;
+    border: 0px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.15);
+}
+
+.times {
+    color: #FF5656;
+}
+
+.plus {
+    background: #FF5656;
+    color: #fff;
+    /* margin: 0 0 0 -5.45px; */
+}
+
+.times:hover,
+.times:focus,
+.times:active {
+    color: #fff;
+    background: #cacaca;
+}
+
+.plus:hover,
+.plus:focus,
+.plus:active {
+    color: #fff;
+    background: #ffa9a9;
+}
+
+.bcard {
+    padding: 20px;
+    margin: 3px 0;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+input[type="checkbox"]+label span {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin: 0 10px 0 0;
+    border: 1px solid #FF5656;
+    background: #fff;
+    cursor: pointer;
+}
+
+input[type="checkbox"]:checked+label span {
+    background: #FF5656;
+    position: relative;
+    top: 7px;
+}
+
+input[type="checkbox"]:checked+label span:after {
+    position: relative;
+    content: "✓";
+    color: #fff;
+    font-size: 14px;
+    top: -10px;
+    left: 2px;
+}
+
+input[type="checkbox"]:checked+label b {
+    color: #cccc;
+    text-decoration: line-through;
+}
+
+.textlist {
+    float: left;
+    font-size: 20px;
+    line-height: 34px;
+    width: 80%;
+}
+
+.icon-btn {
+    line-height: 34px;
+    padding: 0 2px;
+    border: 0px;
+    color: #4A4A4A;
+    cursor: pointer;
+}
+
+.icon-btn:hover,
+.icon-btn:active {
+    color: #FF5656;
+}
+
+.fasstar2 {
+    right: 5px;
+    top: -22px;
+}
+
+.farstar2 {
+    right: -25px;
+    top: -22px;
+}
+
+.icon {
+    margin: 5px 20px;
+    color: #4A4A4A;
+}
+
+@media(max-width:639px) {
+    .btn-menu {
+        width: 30%;
+    }
+    .dateinput {
+        float: right;
+        width: 80%;
+        margin: -2px 0 10px 0;
+        clear: both;
+    }
+    .filelist {
+        clear: both;
+        padding-top: 20px;
+    }
+    .form-btn {
+        width: 100%;
+    }
+    .textlist {
+        width: 65%;
+    }
+    button {
+        background: #fff;
+    }
+}
